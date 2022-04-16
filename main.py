@@ -1,5 +1,4 @@
-import names
-import requests
+import names , requests
 from colorama import *
 url_base = 'https://github.com/'
 
@@ -13,7 +12,7 @@ for i in range(amount):
     
 
     if r.status_code == 200:
-        print(Fore.GREEN + "[Valid] => " + Fore.RESET + url)
+        print(Fore.GREEN + "[Valid link] => " + Fore.RESET + url)
         open('github.log', 'a+').write(url + "\n")
     else:
-        print(Fore.RED + "[Invalid] => " + Fore.RESET + url , r.status_code)
+        print(Fore.RED + "[Invalid link] => " + Fore.RESET + url , r.status_code)
